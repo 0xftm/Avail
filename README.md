@@ -72,3 +72,10 @@ journalctl -f -u availd
 ## Check your node on https://telemetry.avail.tools
 ![image](https://github.com/0xftm/Avail/assets/115777868/1c5d5e62-ec9f-4058-945f-5179e27a026e)
 
+## Set identity
+After the node has synchronized, we pull out the key from our node by entering the command
+```sh
+curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933
+```
+
+If you get a similar result, then everything is great {"jsonrpc":"2.0","result":"0xa0very0long0hex0string","id":1} - copy the key (in bold) we will need it in the near future
